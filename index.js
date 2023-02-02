@@ -8,7 +8,7 @@ const routes = require('./routes');
 // creates an Express.js app using the 'express' function
 const app = express();
 // sets the port to either the value of process.env.PORT, or 3001 if process.env.PORT is not defined
-const port = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 // configures the app to use the 'express.urlencoded' and 'express.json' middlewares to parse incoming request bodies as URL-encoded data and JSON data, respectively
 app.use(express.urlencoded({ extended: true }));
