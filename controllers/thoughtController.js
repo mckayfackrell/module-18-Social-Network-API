@@ -4,7 +4,7 @@ module.exports = {
   // GET all thoughts
   // middleware
   getThoughts(req, res) {
-    User.find()
+    Thought.find()
       .then((thoughts) => res.json(thoughts))
       .catch((err) => res.status(500).json(err));
   },
