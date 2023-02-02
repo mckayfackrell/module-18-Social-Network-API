@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const {
-  getThoughts,
+  getAllThoughts,
   getSingleThought,
   createThought,
   updateThought,
@@ -10,7 +10,7 @@ const {
 } = require("../../controllers/thoughtController");
 
 // route will be /api/thoughts to get all thoughts and create a new thought
-router.route("/").get(getThoughts).post(createThought);
+router.route("/").get(getAllThoughts).post(createThought);
 
 // the route for /:thoughtId will .get a single thought, .put (update) a single thought and .delete (delete) a single thought
 router

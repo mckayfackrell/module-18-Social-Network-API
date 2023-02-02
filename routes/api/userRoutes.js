@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const {
-  getUsers,
+  getAllUsers,
   getSingleUser,
   createUser,
   updateUser,
@@ -10,7 +10,7 @@ const {
 } = require("../../controllers/userController");
 
 // these preform the corresponding CRUD (Create, Read, Update, Delete) operations for Users
-router.route("/").get(getUsers).post(createUser);
+router.route("/").get(getAllUsers).post(createUser);
 
 //the route of /:userId can be used for .get .put and .delete methods
 router.route("/:userId").get(getSingleUser).put(updateUser).delete(deleteUser);

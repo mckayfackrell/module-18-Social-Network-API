@@ -3,7 +3,7 @@ const { User, Thought } = require("../models");
 module.exports = {
   // GET all users
   // middle
-  getUsers(req, res) {
+  getAllUsers(req, res) {
     User.find()
       .then((users) => res.json(users))
       .catch((err) => res.status(500).json(err));
@@ -31,7 +31,8 @@ module.exports = {
   updateUser(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
-      { username: req.body.username }
+      { username: req.body.username },
+      { email: req.body.email}
     )
       .then((user) =>
         !user

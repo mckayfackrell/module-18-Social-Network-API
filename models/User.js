@@ -10,9 +10,9 @@ const userSchema = new Schema(
     },
     email: {
       type: String,
-      required: [true, "Please enter Email Address"], // the email must be provided and an error message is displayed if not
       unique: true, //the email must be unique in the database
-      match: /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/, // regex to match a valid email address
+      required: true, // the email must be provided and an error message is displayed if not
+      match: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, // regex to match a valid email address
     },
     thoughts: [
       {
@@ -31,6 +31,7 @@ const userSchema = new Schema(
     toJSON: {
       virtuals: true, // this makes virtual properties (like friendCount) included in the JSON response
     },
+    id: false,
   }
 );
 
