@@ -31,11 +31,9 @@ module.exports = {
       })
       .then((user) =>
         !user
-          ? res
-              .status(404)
-              .json({
-                message: "Thought created, but no user found with that ID",
-              })
+          ? res.status(404).json({
+              message: "Thought created, but no user found with that ID",
+            })
           : res.json(user)
       )
       .catch((err) => res.status(500).json(err));
@@ -68,11 +66,9 @@ module.exports = {
       )
       .then((user) =>
         !user
-          ? res
-              .status(404)
-              .json({
-                message: "Thought deleted, but no user found with that ID",
-              })
+          ? res.status(404).json({
+              message: "Thought deleted, but no user found with that ID",
+            })
           : res.json(user)
       )
       .catch((err) => res.status(500).json(err));

@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema(
   {
@@ -30,7 +30,7 @@ const userSchema = new Schema(
   {
     toJSON: {
       virtuals: true, // this makes virtual properties (like friendCount) included in the JSON response
-    }
+    },
   }
 );
 
@@ -38,6 +38,6 @@ userSchema.virtual("friendCount").get(function () {
   return this.friends.length; // this virtual property returns the number of friends a user has
 });
 
-const User = model('user', userSchema);
+const User = model("user", userSchema);
 
 module.exports = User;

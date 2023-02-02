@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
-const dateFormat = require("../utils/helpers"); //import the dateFormate function from utils
+const dateFormat = require("../utils/helpers");
+//import the dateFormate function from utils
 
 // Define the Reaction schema
 const reactionSchema = new Schema(
@@ -26,18 +27,17 @@ const reactionSchema = new Schema(
   {
     toJSON: {
       getters: true,
+      // a custom getter is a function that can transform a value before it gets returned when calling toJSON method on a Mongoose document. By setting toJSON.getters to true, Mongoose will apply the getter functions before returning the JSON representation
     },
-    // a custom getter is a function that can transform a value before it gets returned when calling toJSON method on a Mongoose document. By setting toJSON.getters to true, Mongoose will apply the getter functions before returning the JSON representation
   }
 );
 
-// Define the Thought schema
 const thoughtSchema = new Schema(
   {
     thoughtText: {
       type: String,
       required: true,
-      minlength: 1,
+      minLength: 1,
       maxLength: 280,
     },
     createdAt: {
