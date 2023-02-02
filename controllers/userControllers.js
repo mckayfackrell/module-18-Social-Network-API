@@ -2,6 +2,7 @@ const { User, Thought } = require("../models");
 
 module.exports = {
   // GET all users
+  // middle
   getUsers(req, res) {
     User.find()
       .then((users) => res.json(users))
@@ -67,7 +68,7 @@ module.exports = {
 
   // DELETE a friend from a specific user
   deleteFriend(req, res) {
-    User.findOneAndDelete(
+    User.findOneAndUpdate(
       { _id: req.params.userId },
       { $pull: { friends: req.params.friendId } } // removes from an existing array
     )
