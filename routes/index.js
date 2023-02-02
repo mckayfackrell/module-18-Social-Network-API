@@ -6,8 +6,6 @@ const apiRoutes = require("./api");
 router.use("/api", apiRoutes);
 
 // catch-all route for requests to unknown routes
-router.use((req, res) => {
-  return res.send("Wrong route!");
-});
+router.use((req, res) => res.send("Wrong route!"));
 
 module.exports = router;

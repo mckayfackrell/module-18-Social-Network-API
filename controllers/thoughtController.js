@@ -11,7 +11,7 @@ module.exports = {
 
   // GET a single thought by its _id
   getSingleThought(req, res) {
-    Thought.findOne({ _id: req.params.userId })
+    Thought.findOne({ _id: req.params.thoughtId })
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: "No thought with that ID" })
@@ -25,15 +25,17 @@ module.exports = {
     Thought.create(req.body)
       .then((thought) => {
         return User.findOneAndUpdate(
-          { _id: req.params.userId },
+          { _id: req.body.userId },
           { $addToSet: { thoughts: thought._id } }
         );
       })
       .then((user) =>
         !user
-          ? res.status(404).json({
-              message: "Thought created, but no user found with that ID",
-            })
+          ? res
+              .status(404)
+              .json({
+                message: "Thought created, but no user found with that ID",
+              })
           : res.json(user)
       )
       .catch((err) => res.status(500).json(err));
@@ -66,9 +68,11 @@ module.exports = {
       )
       .then((user) =>
         !user
-          ? res.status(404).json({
-              message: "Thought deleted, but no user found with that ID",
-            })
+          ? res
+              .status(404)
+              .json({
+                message: "Thought deleted, but no user found with that ID",
+              })
           : res.json(user)
       )
       .catch((err) => res.status(500).json(err));
