@@ -3,17 +3,18 @@
 
 An application called Social Network API which allows for a user to view a noSQL database for their social network.
 
-## Gifs
-| Terminal | Tags | Categories | Products |
-|---------|---------|---------|---------|
-| image | image | image | image |
+## Images and Video URL
+| Reaction | Thoughts | Users |
+|---------|---------|---------|
+|![Screenshot 2023-02-04 at 14 05 13](https://user-images.githubusercontent.com/110206514/216789573-133691dd-868b-48fe-ab40-b80e94f5faa3.jpg)|![Screenshot 2023-02-04 at 14 05 02](https://user-images.githubusercontent.com/110206514/216789576-ce139701-f095-4343-a8ba-6bbbe7a45ca9.jpg)|![Screenshot 2023-02-04 at 14 04 48](https://user-images.githubusercontent.com/110206514/216789577-946edc50-c1ff-4ee7-ba68-d7e6531bd11f.jpg)|
 
-## Installation 
+[Video Demonstration](https://drive.google.com/file/d/1lf6Evce3C-nWa7zOanIV0n-69By5kurs/view?usp=sharing)
 
-
-## Usage
-
-
+## Installation and Usage
+npm i the package.json
+npm start
+export the insomnia routes.json file from within the assets folder to the insomnia app for easier routes access
+run the server and send the POST, PUT, DELETE, etc. to manipulate the database
 
 ## Authors and acknowledgment
 
